@@ -1,0 +1,2 @@
+# Optimizing-the-Ring-Leader-Election-Algorithm-using-go-rpc
+Leader election is an important task in distributed systems. Our code optimizes the general Ring Election Algorithm by addressing key drawbacks such as multiple simultaneous elections, message overhead, and failure handling. It ensures only one election runs at a time using atomic bool, minimizes delays and deadlocks through timeout-based retries.
