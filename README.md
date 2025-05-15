@@ -52,6 +52,27 @@ Implements timeout-based retries to prevent deadlocks and ensure elections compl
 - **Goroutines**: Parallel execution
 - **Standard Library Only**: No external dependencies
 
+## Usage
+
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/Indirasribhashyam/Optimizing-the-Ring-Leader-Election-Algorithm-using-go-rpc.git
+    ```
+
+2. **Change directory to the project folder:**
+
+    ```bash
+    cd Optimizing-the-Ring-Leader-Election-Algorithm-using-go-rpc
+    ```
+
+3. **Compile and Run the application:**
+
+    ```bash
+    go run main.go
+    ```
+
 ## Future Work
 
 * Integrate actual Go RPC between processes.
