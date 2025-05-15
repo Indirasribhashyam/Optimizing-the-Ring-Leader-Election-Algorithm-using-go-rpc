@@ -1,9 +1,25 @@
-# Optimizing-the-Ring-Leader-Election-Algorithm-using-go-rpc
-Leader election is an important task in distributed systems. Our code optimizes the general Ring Election Algorithm by addressing key drawbacks such as multiple simultaneous elections, message overhead, and failure handling. It ensures only one election runs at a time using atomic bool, minimizes delays and deadlocks through timeout-based retries.
+# Optimizing the Ring Leader Election Algorithm using Go RPC
 
-This project enhances the Ring Leader Election Algorithm to address common challenges in distributed systems. 
+Leader election is an essential operation in distributed systems. This project optimizes the classic Ring Election Algorithm using Go’s concurrency features like goroutines, atomic operations, and channels. It ensures only one election runs at a time, minimizes overhead, and handles failures gracefully.
 
-## Key optimizations include:
+## Description
+
+This project enhances the Ring Leader Election Algorithm to address common issues like:
+- Multiple simultaneous elections
+- Deadlocks due to non-responsive processes
+- Message overhead
+- Lack of leader acknowledgment
+
+We leverage Go's atomic operations, channels, and timeout mechanisms to make the election robust and efficient.
+
+## 🧠 Problem Statement
+
+In traditional ring algorithms, the following problems occur:
+- Multiple processes may start elections simultaneously.
+- Dead or unresponsive processes can cause delays or infinite waits.
+- There is no guaranteed mechanism for all processes to acknowledge the leader.
+
+## Key Optimizations
 
 **Prevention of Multiple Simultaneous Elections:**
 Uses an atomic boolean (electionRunning) to ensure only one election occurs at a time, reducing unnecessary message overhead.
@@ -28,3 +44,17 @@ The first alive process starts the election, and higher IDs have a better chance
 
 **Deadlock Prevention:**
 Implements timeout-based retries to prevent deadlocks and ensure elections complete successfully.
+
+## Technologies Used
+
+- **Go (Golang)**: Concurrency, channels, atomic operations
+- **Randomization**: Simulate process failures
+- **Goroutines**: Parallel execution
+- **Standard Library Only**: No external dependencies
+
+## Future Work
+
+* Integrate actual Go RPC between processes.
+* Create UI-based visualization of the ring and election progress.
+* Extend to dynamic rings (process joins/leaves).
+* Add metrics dashboard for election time, retries, etc.
