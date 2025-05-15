@@ -2,6 +2,13 @@
 
 Leader election is an essential operation in distributed systems. This project optimizes the classic Ring Election Algorithm using Go’s concurrency features like goroutines, atomic operations, and channels. It ensures only one election runs at a time, minimizes overhead, and handles failures gracefully.
 
+## Problem Statement
+
+In traditional ring algorithms, the following problems occur:
+- Multiple processes may start elections simultaneously.
+- Dead or unresponsive processes can cause delays or infinite waits.
+- There is no guaranteed mechanism for all processes to acknowledge the leader.
+
 ## Description
 
 This project enhances the Ring Leader Election Algorithm to address common issues like:
@@ -11,13 +18,6 @@ This project enhances the Ring Leader Election Algorithm to address common issue
 - Lack of leader acknowledgment
 
 We leverage Go's atomic operations, channels, and timeout mechanisms to make the election robust and efficient.
-
-## 🧠 Problem Statement
-
-In traditional ring algorithms, the following problems occur:
-- Multiple processes may start elections simultaneously.
-- Dead or unresponsive processes can cause delays or infinite waits.
-- There is no guaranteed mechanism for all processes to acknowledge the leader.
 
 ## Key Optimizations
 
